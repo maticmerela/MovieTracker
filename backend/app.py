@@ -6,10 +6,10 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-# CORS(app)
+CORS(app)
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+# CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
 
@@ -68,5 +68,5 @@ def handle_options():
 
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all()  # Ustvari tabele
-    app.run(host='localhost', port=5000, debug=True)
+        db.create_all()
+    app.run(host='0.0.0.0', port=5000, debug=True)

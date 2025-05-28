@@ -2,21 +2,23 @@ import React from "react";
 import axios from "axios";
 
 const statusOptions = ["planned", "watching", "completed"];
-const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:5000";
+// const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 
 function MediaList({ media, onRefresh }) {
   const handleDelete = async (id) => {
-    await axios.delete(`http://127.0.0.1:5000/media/${id}`);
+    await axios.delete(`${API_URL}/media/${id}`);
     onRefresh();
   };
 
   const handleRating = async (id, rating) => {
-    await axios.put(`http://127.0.0.1:5000/media/${id}`, { rating });
+    await axios.put(`${API_URL}/media/${id}`, { rating });
     onRefresh();
   };
 
   const handleStatusChange = async (id, newStatus) => {
-    await axios.put(`http://127.0.0.1:5000/media/${id}`, { status: newStatus });
+    await axios.put(`${API_URL}/media/${id}`, { status: newStatus });
     onRefresh();
   };
 

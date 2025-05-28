@@ -1,26 +1,24 @@
 version: '3.8'
+
 services:
   backend:
     build: ./backend
+    container_name: backend
     ports:
       - "5000:5000"
     volumes:
       - ./backend:/app
-    working_dir: /app
-    command: python app.py
     environment:
       - FLASK_ENV=development
-    depends_on:
-      - frontend
 
   frontend:
-    image: node:18
-    working_dir: /app
-    volumes:
-      - ./frontend:/app
+    build: ./frontend
+    container_name: frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
     environment:
-      - REACT_APP_API_URL=http://backend:5000
-    command: sh -c "npm install && npm start"
-
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend

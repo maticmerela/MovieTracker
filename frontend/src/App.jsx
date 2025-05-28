@@ -9,14 +9,17 @@ function App() {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("film");
   const [rating, setRating] = useState(0);
+  // const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 
   const fetchMedia = async () => {
-    const res = await axios.get("http://127.0.0.1:5000/media");
+    const res = await axios.get(`${API_URL}/media`);
     setMedia(res.data);
   };
 
  const addMedia = async () => {
-  await axios.post("http://127.0.0.1:5000/media", {
+  await axios.post(`${API_URL}/media`, {
     title,
     type,
     rating,
