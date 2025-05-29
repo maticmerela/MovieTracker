@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from models import db, Media
+# from flasgger import Swagger
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
@@ -20,6 +21,16 @@ CORS(app)
 # # @app.before_first_request
 # def create_tables():
 #     db.create_all()
+
+# app = Flask(__name__)
+# app.config['SWAGGER'] = {
+#     'title': 'Media API',
+#     'uiversion': 3
+# }
+# swagger = Swagger(app, template_file='openapi.yaml')
+
+# app = Flask(__name__)
+# swagger = Swagger(app)
 
 @app.route('/media', methods=['GET'])
 def get_all_media():
