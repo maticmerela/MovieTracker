@@ -1,5 +1,8 @@
 Aplikacija omogoča sledenje filmov in serij, ki si jih uporabnik želi pogledati, jih gleda oz. si jih je ogledal v preteklosti. Uporabnik lahko na seznam doda poljuben film ali serijo, doda njegovo oceno (ali pusti prazno polje in oceno doda kasneje) ter izbere med tipom vsebine (serija in film). S klikom na gumb "Dodaj" se film/serija doda v ustrezno tabelo filmov oz. serij in prikaže pod vnosnimi polji. Znotraj tabele lahko uporabnik spreminja status filma in sicer na "completed", "watching" ali "planed". Lahko tudi dodaja oz. spreminja oceno in izbriše posamezen film oz. serijo. 
 
+Predpogoji: 
+Na računalniku kjer poganjaš moraš imeti nameščen Node.js
+
 Navodila za zagon:
 1. Kloniranje repozitorija 
 git clone https://github.com/maticmerela/MovieTracker.git
