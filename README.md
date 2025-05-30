@@ -9,11 +9,11 @@ git clone https://github.com/maticmerela/MovieTracker.git
 sudo docker compose up --build 
 
 oz. če želiš, da container teče v ozadju: 
-docker compose up -d --build
+sudo docker compose up -d --build
 4. Dostopaj do aplikacije znotraj brskalnika na lastnem IP naslovu in portu 3000
 http://<tvoj_ip>:3000
 
-Sam sem docker container zagnal na šolski virtualki z naslovom 212.101.137.107, funkcionalnost pa je možno testirati na http://212.101.137.107:3000/
+Sam sem docker container zagnal na šolski virtualki z naslovom 212.101.137.107, kjer pe vedno teče, funkcionalnost pa je možno testirati preko http://212.101.137.107:3000/
 
 API dokumentacija: 
 
